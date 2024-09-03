@@ -66,8 +66,14 @@ export default function CartPage() {
     </div>
   );
 }
-
-function CartItem({ name, price, quantity, image, id }) {
+interface CardItemProps {
+  name: string;
+  price: number;
+  quantity: number;
+  image: string; // Adjust based on your project setup
+  id: number;
+}
+function CartItem({ name, price, quantity, image, id }: CardItemProps) {
   const { removeFromCart } = useCart();
   return (
     <div className="flex items-center space-x-4 border p-4 rounded-lg">

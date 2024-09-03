@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+interface PricingCardProps {
+  title: string;
+  price: string | number;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+}
 
 export default function Pricing() {
   return (
@@ -34,7 +41,7 @@ function PricingCard({
   description,
   features,
   highlighted = false,
-}) {
+}: PricingCardProps) {
   return (
     <div
       className={`flex flex-col p-6 bg-white rounded-lg shadow-lg ${

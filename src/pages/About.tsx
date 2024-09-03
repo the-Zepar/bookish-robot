@@ -135,8 +135,12 @@ export default function About() {
     </div>
   );
 }
+interface ValueCardProps {
+  title: string;
+  description: string;
+}
 
-function ValueCard({ title, description }) {
+function ValueCard({ title, description }: ValueCardProps) {
   return (
     <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg">
       <CheckCircle className="h-12 w-12 text-green-500" />
@@ -147,8 +151,12 @@ function ValueCard({ title, description }) {
     </div>
   );
 }
-
-function TeamMember({ name, role, img }) {
+interface TeamMemberProps {
+  name: string;
+  role: string;
+  img: string;
+}
+function TeamMember({ name, role, img }: TeamMemberProps) {
   return (
     <div className="flex flex-col items-center space-y-2">
       <img

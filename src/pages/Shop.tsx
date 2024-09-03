@@ -56,8 +56,23 @@ export default function Shop() {
   );
 }
 
-function ProductCard({ name, description, price, image, id }) {
+interface ProductCardProps {
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  id: number;
+}
+
+function ProductCard({
+  name,
+  description,
+  price,
+  image,
+  id,
+}: ProductCardProps) {
   const { addToCart } = useCart();
+
   return (
     <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
       <img
@@ -72,7 +87,7 @@ function ProductCard({ name, description, price, image, id }) {
         {description}
       </p>
       <p className="text-lg font-semibold">${price.toFixed(2)}</p>
-      <Button onClick={() => addToCart({ id, name, price })}>
+      <Button onClick={() => addToCart({ id, name, price, quantity: 0 })}>
         Add to Cart
       </Button>
     </div>

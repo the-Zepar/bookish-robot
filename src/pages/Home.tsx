@@ -1,7 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Star, Zap, Shield, BarChart, Cloud, Smartphone } from "lucide-react";
+import { Star, Zap, Shield, Smartphone } from "lucide-react";
 import placeholder from "/placeholder.svg";
+
+import { ReactNode } from "react";
+
+interface FeatureCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+interface TestimonialsCardProps {
+  quote: string;
+  author: string;
+}
 
 import { Link } from "react-router-dom";
 import { slogans, pv } from "@/constant/constant";
@@ -133,7 +146,7 @@ export default function Home() {
   );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
   return (
     <div className="flex flex-col items-center space-y-2 border-gray-200 p-4 rounded-lg">
       <div className="p-3 rounded-full bg-gray-900 text-white dark:bg-gray-50 dark:text-gray-900">
@@ -147,7 +160,7 @@ function FeatureCard({ icon, title, description }) {
   );
 }
 
-function TestimonialCard({ quote, author }) {
+function TestimonialCard({ quote, author }: TestimonialsCardProps) {
   return (
     <div className="flex flex-col items-center space-y-2 border p-6 rounded-lg">
       <p className="text-gray-500 dark:text-gray-400 italic">"{quote}"</p>
