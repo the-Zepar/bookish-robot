@@ -1,7 +1,7 @@
 import placeholder from "/placeholder.svg";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
-import img from "/photo-1.jpg";
+import img from "/photo-2.jpg";
 
 export default function About() {
   return (
