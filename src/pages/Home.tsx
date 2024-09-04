@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Star, Zap, Shield, Smartphone } from "lucide-react";
-import placeholder from "/placeholder.svg";
+import img from "/photo-1.jpg";
 
 import { ReactNode } from "react";
 
@@ -28,7 +28,7 @@ export default function Home() {
               alt="Product showcase"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last lg:aspect-square"
               height="550"
-              src={placeholder}
+              src={img}
               width="550"
             />
             <div className="flex flex-col justify-center space-y-4">

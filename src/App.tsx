@@ -2,15 +2,75 @@ import { ShoppingCart } from "lucide-react";
 
 import { Outlet, Link } from "react-router-dom";
 import { useCart } from "@/context/CartProvider";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+
 export default function App() {
   const { cart } = useCart();
   return (
     <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-14 flex items-center">
-        <Link className="font-bold text-lg" to="home">
+        <Link className="font-bold text-2xl" to="home">
           <span>Acme Inc</span>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
+        <NavigationMenu className="sm:hidden ml-auto">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>More</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="p-6 w-[100px]">
+                  <li className="">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        className="font-medium hover:underline underline-offset-4"
+                        to="contact"
+                      >
+                        Contact
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li className="">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        className="font-medium hover:underline underline-offset-4"
+                        to="shop"
+                      >
+                        Shop
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li className="">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        className="font-medium hover:underline underline-offset-4"
+                        to="about"
+                      >
+                        About
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li className="">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        className="font-medium hover:underline underline-offset-4"
+                        to="pricing"
+                      >
+                        Pricing
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6 mx-3">
           <Link
             className="text-sm font-medium hover:underline underline-offset-4"
             to="cart"
@@ -24,25 +84,25 @@ export default function App() {
           </Link>
 
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-sm font-medium hover:underline underline-offset-4 max-sm:hidden"
             to="pricing"
           >
             Pricing
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-sm font-medium hover:underline underline-offset-4 max-sm:hidden"
             to="about"
           >
             About
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-sm font-medium hover:underline underline-offset-4 max-sm:hidden"
             to="shop"
           >
             Shop
           </Link>
           <Link
-            className="text-sm font-medium hover:underline underline-offset-4"
+            className="text-sm font-medium hover:underline underline-offset-4 max-sm:hidden"
             to="contact"
           >
             Contact

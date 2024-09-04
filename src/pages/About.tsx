@@ -1,6 +1,7 @@
 import placeholder from "/placeholder.svg";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import img from "/photo-1.jpg";
 
 export default function About() {
   return (
@@ -38,7 +39,7 @@ export default function About() {
               </p>
             </div>
             <img
-              src={placeholder}
+              src={img}
               alt="Team photo"
               width={600}
               height={400}
